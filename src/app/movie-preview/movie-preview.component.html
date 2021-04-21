@@ -1,0 +1,15 @@
+<a class="card carousel_item"
+[ngClass]="{'active': active}"
+(click)="makeActive"
+>
+<!-- [ngStyle]="{ 'left': placement<= 4 ? position + '%' : '100%'
+,'display': placement> 4 ? 'none' : 'block' }" -->
+
+<!-- [ngStyle]="{ 'left': data <= 50 ? data + '%' : 'auto', 'right': data > 50 ? 100 - data + '%' : 'auto' }" -->
+    <img src="/assets/img/scifi/{{movie.image}}" alt="" class="preview">
+    <div class="info">
+        <h3 class="title">{{ placement }}: {{ movie.title}} </h3>
+        <p class="description">{{ movie.description }}</p>
+    </div>
+</a>
+

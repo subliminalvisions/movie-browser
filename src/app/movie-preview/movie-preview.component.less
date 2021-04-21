@@ -1,0 +1,34 @@
+:host {
+    width: calc(100% * (1/4) );
+}
+.card {
+    display: block;
+    margin-right: .5em;
+    margin-left: .5em;
+    padding: 1em;
+    // position: absolute;
+    // width: 24%;
+
+    h2 {
+        margin-top: 0;
+    }
+    img.preview {
+        max-width: 100%;
+        max-height: 100%;
+        display: block; 
+    }
+    .info {
+        display: none;
+    }
+
+    &.active {
+        border: 1px solid #0088F8;
+        padding:  .5em .5em 0;
+
+        .info {
+            display: block;
+        }
+    }
+
+
+}

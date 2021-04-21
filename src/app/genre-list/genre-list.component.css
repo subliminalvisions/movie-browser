@@ -1,0 +1,46 @@
+.icon {
+  background-color: #0088F8;
+  padding: 1em;
+  display: flex;
+  justify-content: space-around;
+  height: 2em;
+  width: 2em;
+  flex-wrap: wrap;
+  line-height: 30px;
+  border-radius: 2em;
+  margin: 0 auto 1em;
+}
+.icon .box {
+  background-color: #fff;
+  padding: 0.125em;
+  margin: 0.125em;
+  width: 50%;
+  margin: 0.25em;
+  flex: 1 0 0px;
+}
+.row.carousel-content {
+  display: flex;
+  min-height: 256px;
+  padding: 0.25em;
+}
+.movWrap {
+  display: flex;
+  overflow-y: hidden;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 1em;
+}
+.movWrap > * {
+  flex: 0 0 24%;
+}
+.text-center {
+  text-align: center;
+}
+.viewToggle {
+  background-color: #004075;
+  padding: 2em;
+  max-width: 80px;
+  text-align: center;
+  display: block;
+}

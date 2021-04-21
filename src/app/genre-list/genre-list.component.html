@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row title">
+      <h1 class="genre-title">Comedy : {{ crrSlide }}
+    </h1>
+    </div>
+    <div class="row carousel-content">
+        <div class="section-button">
+            <a #focusEl class="viewToggle" (click)="ToggleAll()">
+                <span class="icon">
+                    <span class="box"></span>
+                    <span class="box"></span>
+                    <span class="box"></span>
+                    <span class="box"></span>
+                </span>
+                <span class="genreTitle text-center">VIEW ALL</span>
+            </a>
+        </div>
+        <div #movieWrap class="movWrap"
+        [ngStyle]="{ 'flex-wrap': listWrap===true ? 'wrap' : 'nowrap' }"
+        >
+        <!-- ,'display': placement> 4 ? 'none' : 'block' } -->
+            <app-movie-preview *ngFor="let mov of movies"
+            [currentSlide]="crrSlide"
+            [movie]="mov"
+            ></app-movie-preview>
+        </div>
+
+        <!-- <div class="movieList"></div> -->
+
+    </div>
+  </div>
