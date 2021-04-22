@@ -25,3 +25,6 @@
 .card.active .info {
   display: block;
 }
+.card:hover {
+  background-color: #222;
+}

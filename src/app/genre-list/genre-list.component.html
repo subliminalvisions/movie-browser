@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row title">
-      <h1 class="genre-title">Comedy : {{ crrSlide }}
+      <h1 class="genre-title">Comedy : 
+          <!-- {{ crrSlide }} -->
     </h1>
     </div>
     <div class="row carousel-content">
@@ -16,11 +17,12 @@
             </a>
         </div>
         <div #movieWrap class="movWrap"
-        [ngStyle]="{ 'flex-wrap': listWrap===true ? 'wrap' : 'nowrap' }"
+        [ngStyle]="{ 'flex-wrap': slimView===false ? 'wrap' : 'nowrap' }"
         >
         <!-- ,'display': placement> 4 ? 'none' : 'block' } -->
             <app-movie-preview *ngFor="let mov of movies"
-            [currentSlide]="crrSlide"
+            [currentSlide]="activSlide"
+            (highlighted)="onPushNewNum($event)"
             [movie]="mov"
             ></app-movie-preview>
         </div>

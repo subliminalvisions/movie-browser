@@ -32,7 +32,7 @@
   padding-bottom: 1em;
 }
 .movWrap > * {
-  flex: 0 0 24%;
+  flex: 0 0 24.5%;
 }
 .text-center {
   text-align: center;
@@ -43,4 +43,10 @@
   max-width: 80px;
   text-align: center;
   display: block;
+}
+.viewToggle:hover {
+  background-color: #666;
+}
+.viewToggle:hover .icon {
+  background-color: #111;
 }

@@ -3,6 +3,7 @@ import { Component, Input, OnInit,
   EventEmitter, Output
  } from '@angular/core';
 import { MovieModel } from '../movie.model';
+import { CurrentSlideService } from '../current-slide.service';
 
 @Component({
   selector: 'app-movie-preview',
@@ -12,13 +13,19 @@ import { MovieModel } from '../movie.model';
 export class MoviePreviewComponent implements OnInit, OnChanges, AfterViewInit{
 
   @Input() movie: MovieModel;
+
+  // move to service?
   @Input() currentSlide: number;
-  @Output() highlighted: number;
+
+  // @Output() highlighted: number;
+  // move to service?
+  @Output() highlightedNum = new EventEmitter<number>();
+
   active: boolean;
   position: number;
   placement: number;
 
-  constructor() { }
+  constructor(public slideService: CurrentSlideService) { }
 
   ngOnInit(): void {
   }
@@ -31,13 +38,15 @@ export class MoviePreviewComponent implements OnInit, OnChanges, AfterViewInit{
 
   ngOnChanges(): void {
     this.active = (this.currentSlide===this.movie.id);
-
     // this.placement = this.movie.id;
     this.position = (this.placement -1)*25;
   }
-  makeActive() {
-    this.active = true;
-
+  makeActive(num) {
+    const seletedNum = num;
+    console.log('num',num);
+    this.slideService.updateSlideNum(num);
+    this.active = !this.active;
+    this.highlightedNum.emit(seletedNum); 
   }
 
 }
