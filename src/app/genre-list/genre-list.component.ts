@@ -45,7 +45,7 @@ export class GenreListComponent implements OnInit, OnChanges {
 
       if(this.activSlide>4) {
         this.activMin = this.activSlide-3;
-      } else {this.activMin=-3}
+      } else { this.activMin=-3 }
   }
 
   ToggleAll() {
