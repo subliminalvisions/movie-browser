@@ -1,10 +1,6 @@
-import { Component, Input, OnInit, 
-  EventEmitter, Output, ChangeDetectorRef
- } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MovieModel } from '../movie.model';
 import { CurrentSlideService } from '../current-slide.service';
-// import {Observable} from "rxjs";// First you need to import Observable
-// import {of} from "rxjs";// First you need to import Observable
 
 @Component({
   selector: 'app-movie-preview',
@@ -14,20 +10,8 @@ import { CurrentSlideService } from '../current-slide.service';
 export class MoviePreviewComponent implements OnInit {
 
   @Input() movie: MovieModel;
-
-  // move to service?
-  // @Input() currentSlide: number;
-
-  // @Output() highlighted: number;
-  // move to service?
-  @Output() highlightedNum = new EventEmitter<number>();
-
   active: boolean;
-  position: number;
   activSlide: number;
-  placement: number;
-  isVisible: boolean;
-  isHidden: boolean;
 
   constructor(
     public slideService: CurrentSlideService,
@@ -35,29 +19,23 @@ export class MoviePreviewComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    // get active Slide 
     this.slideService.getActivSlide().subscribe(activNum => {
-      this.activSlide  = activNum;
-      
+      // set this instance to active if match
       this.active = (activNum===this.movie.id);
-      // console.log(this.activSlide-this.movie.id);
-      // this.isVisible = ((activNum+4)<this.movie.id);
-
-      // this.isVisible = ((this.activSlide  - this.movie.id)<1);
-      // console.log(this.isVisible);
-      // console.log(this.movie.id<(activNum-4));
     });
   }
 
   ngDoCheck() {
+    this.cd.detectChanges();
     this.activSlide = this.slideService.getActivSlideNum();
+    // update active state if match in Service variable
     this.active = (this.activSlide===this.movie.id);
-    // isVisible
-    // this.isVisible = ((this.activSlide-4)>0);
   }
-  makeActive(num: number) {
-          console.log(num);
 
+  makeActive(num: number) {
     this.slideService.updateSlideNum(num);
+    // set this instance to active if match in Service variable
     this.active = (this.slideService.currentSlide===this.movie.id);
   }
 

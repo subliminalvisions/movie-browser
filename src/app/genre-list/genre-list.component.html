@@ -20,9 +20,12 @@
         [ngClass]="{'slimView':slimView===true}"
         [ngStyle]="{ 'flex-wrap': slimView===false ? 'wrap' : 'nowrap' }">
             <app-movie-preview *ngFor="let mov of movies"
-            [ngClass]="{ 'isHidden': ((mov.id)<activMin) }"
+            class="mov-item"
+            [ngClass]="{ 'isHidden': ((mov.id)<activMin),
+                      'isActive': ((mov.id)==activSlide) }"
             [movie]="mov"
             ></app-movie-preview>
         </div>
     </div>
   </div>
+  
