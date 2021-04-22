@@ -20,35 +20,26 @@
     }
 }
 .row.carousel-content {
-    // display: block;
-    // display: inline-block;
     display: flex;
     min-height: 256px;
     padding: .25em;
-
 }
+.slimView app-movie-preview.isHidden {
+    display: none;
+}
+
 .movWrap {
-    // max-width: 576px;
     display: flex;
     overflow-y:hidden;
 
     >* {
-        // flex: 1 1 24%;
         flex: 0 0 24.5%;
-        //   width: 33%;
-
     }
-    // max-width: 75%;
     width: 100%;
     overflow: hidden;
     position: relative;
     padding-bottom: 1em;
-    // position: absolute;
-    // margin-left: -288px;
 }
-// app-movie-preview {
-//     max-width: 200px;
-// }
 .text-center {
     text-align: center;
 }
@@ -62,9 +53,7 @@
     &:hover {
         background-color: #666;
         .icon { 
-            // cursor: pointer;
             background-color: #111;
-    
         }
     }
 }

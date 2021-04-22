@@ -18,13 +18,13 @@ export class DataService {
     },
     {
       id: 2,
-      title: 'Insecure',
+      title: 'Pacific Rim',
       description: 'Lorem adipiscing elit, sed do eiusmod tempor',
       image: 'pacificrim.jpg',
     },
     {
       id: 3,
-      title: 'Party Down',
+      title: 'Jupiter Down',
       description: 'Ut enim ad minim veniam, incididunt ut labore',
       image: 'Jupiter-Ascending.jpg',
     },
@@ -38,21 +38,27 @@ export class DataService {
     // to simulate sliding sections 
     {
       id: 5,
-      title: 'Jar Jar Jedi',
+      title: 'Inception',
       description: 'Laboris nisi ut aliquip ex ea commodo consequat',
-      image: 'jar-jar-lightsaber.jpg',
+      image: 'inception.jpg',
     },
     {
       id: 6,
-      title: 'Jar Jar Jedi',
+      title: 'Oblivion',
       description: 'Laboris nisi ut aliquip ex ea commodo consequat',
-      image: 'jar-jar-lightsaber.jpg',
+      image: 'oblivion.jpg',
     },
     {
       id: 7,
-      title: 'Jar Jar Jedi',
+      title: 'Return of the Jedi',
       description: 'Laboris nisi ut aliquip ex ea commodo consequat',
-      image: 'jar-jar-lightsaber.jpg',
+      image: 'starwars6.jpg',
+    },
+    {
+      id: 8,
+      title: 'lego',
+      description: 'Laboris nisi ut aliquip ex ea commodo consequat',
+      image: 'lego.jpg',
     },
   ]
 

@@ -23,6 +23,9 @@
   min-height: 256px;
   padding: 0.25em;
 }
+.slimView app-movie-preview.isHidden {
+  display: none;
+}
 .movWrap {
   display: flex;
   overflow-y: hidden;

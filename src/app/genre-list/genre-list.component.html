@@ -1,8 +1,6 @@
 <div class="container">
     <div class="row title">
-      <h1 class="genre-title">Comedy : 
-          <!-- {{ crrSlide }} -->
-    </h1>
+      <h1 class="genre-title">Sci Fi</h1>
     </div>
     <div class="row carousel-content">
         <div class="section-button">
@@ -17,14 +15,26 @@
             </a>
         </div>
         <div #movieWrap class="movWrap"
+        [ngClass]="{'slimView':slimView===true}"
         [ngStyle]="{ 'flex-wrap': slimView===false ? 'wrap' : 'nowrap' }"
         >
         <!-- ,'display': placement> 4 ? 'none' : 'block' } -->
             <app-movie-preview *ngFor="let mov of movies"
-            [currentSlide]="activSlide"
-            (highlighted)="onPushNewNum($event)"
+            [ngClass]="{ 'isHidden': ((mov.id)<activMin) }"
             [movie]="mov"
             ></app-movie-preview>
+            <!-- [ngStyle]="{ 'display': ((mov.id>activMin) ) ? 'block' : 'none' }" -->
+            
+            <!-- activMin
+
+            if(this.activSlide>4) {
+                console.log('tst', ((this.movie.id+4)<(this.activSlide)) );
+                this.isHidden = ((this.movie.id+4)<(this.activSlide));
+              } -->
+
+            <!-- [currentSlide]="activSlide"
+            (highlighted)="onPushNewNum($event)" -->
+
         </div>
 
         <!-- <div class="movieList"></div> -->
