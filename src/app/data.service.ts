@@ -34,8 +34,6 @@ export class DataService {
       description: 'Laboris nisi ut aliquip ex ea commodo consequat',
       image: 'jar-jar-lightsaber.jpg',
     },
-    // will add more later 
-    // to simulate sliding sections 
     {
       id: 5,
       title: 'Inception',
@@ -56,9 +54,33 @@ export class DataService {
     },
     {
       id: 8,
-      title: 'lego',
+      title: 'Lego',
       description: 'Laboris nisi ut aliquip ex ea commodo consequat',
       image: 'lego.jpg',
+    },
+    {
+      id: 9,
+      title: 'Jar Jar Jedi',
+      description: 'Laboris nisi ut aliquip ex ea commodo consequat',
+      image: 'jar-jar-lightsaber.jpg',
+    },
+    {
+      id: 10,
+      title: 'Jupiter Down',
+      description: 'Ut enim ad minim veniam, incididunt ut labore',
+      image: 'Jupiter-Ascending.jpg',
+    },
+    {
+      id: 11,
+      title: 'Pacific Rim',
+      description: 'Lorem adipiscing elit, sed do eiusmod tempor',
+      image: 'pacificrim.jpg',
+    },
+    {
+      id: 12,
+      title: 'Dune',
+      description: 'Home on le range where le sandworms roam',
+      image: 'dune.jpg',
     },
   ]
 

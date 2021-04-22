@@ -20,3 +20,9 @@ ul li a.active,
 ul li a:hover {
   color: #0088F8;
 }
+@media screen and (max-width: 600px) {
+  ul li a {
+    padding: 1em;
+    display: block;
+  }
+}

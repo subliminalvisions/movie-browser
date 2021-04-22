@@ -51,15 +51,12 @@ export class MoviePreviewComponent implements OnInit {
   ngDoCheck() {
     this.activSlide = this.slideService.getActivSlideNum();
     this.active = (this.activSlide===this.movie.id);
-
-    // if(this.activSlide>4) {
-    //   console.log('tst', ((this.movie.id+4)<(this.activSlide)) );
-    //   this.isHidden = ((this.movie.id+4)<(this.activSlide));
-    // }
     // isVisible
     // this.isVisible = ((this.activSlide-4)>0);
   }
   makeActive(num: number) {
+          console.log(num);
+
     this.slideService.updateSlideNum(num);
     this.active = (this.slideService.currentSlide===this.movie.id);
   }

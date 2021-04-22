@@ -2,13 +2,11 @@
     background-color: #0088F8;
     padding: 1em;
     display: flex;
-    justify-content: space-around;
     height: 2em;
     width: 2em;
     flex-wrap: wrap;
-    line-height:30px;
     border-radius: 2em;
-    margin: 0 auto 1em;
+    margin: 0 auto .5em;
 
     .box {
         background-color: #fff;
@@ -27,13 +25,29 @@
 .slimView app-movie-preview.isHidden {
     display: none;
 }
-
+.viewAllTxt {
+    display: block;
+    width: 100%;
+    margin-bottom: 2em;
+}
 .movWrap {
     display: flex;
     overflow-y:hidden;
 
     >* {
         flex: 0 0 24.5%;
+
+        
+    }
+    @media screen and (max-width:600px) {
+        display: block;
+        // flex-wrap: wrap;
+        // flex-direction: column;
+        // overflow-y:hidden;
+
+        // >* {
+        //     flex: 0 0 100%;        
+        // }
     }
     width: 100%;
     overflow: hidden;
@@ -43,9 +57,14 @@
 .text-center {
     text-align: center;
 }
+.iconpad {
+    padding: .5em;
+    text-align: center;
+    margin: 0 auto;
+}
 .viewToggle {
     background-color: #004075;
-    padding: 2em;
+    padding: 1em;
     max-width: 80px;
     text-align: center;
     display: block;
@@ -55,6 +74,11 @@
         .icon { 
             background-color: #111;
         }
+    }
+}
+@media screen and (max-width:600px) {
+    .section-button {
+        display: none;
     }
 }
 

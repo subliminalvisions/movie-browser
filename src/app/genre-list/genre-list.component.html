@@ -5,39 +5,24 @@
     <div class="row carousel-content">
         <div class="section-button">
             <a #focusEl class="viewToggle" (click)="ToggleAll()">
-                <span class="icon">
-                    <span class="box"></span>
-                    <span class="box"></span>
-                    <span class="box"></span>
-                    <span class="box"></span>
-                </span>
-                <span class="genreTitle text-center">VIEW ALL</span>
+                <div class="iconpad">
+                    <span class="icon">
+                        <span class="box"></span>
+                        <span class="box"></span>
+                        <span class="box"></span>
+                        <span class="box"></span>
+                    </span>
+                </div>
+                <span class="viewAllTxt text-center">VIEW ALL</span>
             </a>
         </div>
         <div #movieWrap class="movWrap"
         [ngClass]="{'slimView':slimView===true}"
-        [ngStyle]="{ 'flex-wrap': slimView===false ? 'wrap' : 'nowrap' }"
-        >
-        <!-- ,'display': placement> 4 ? 'none' : 'block' } -->
+        [ngStyle]="{ 'flex-wrap': slimView===false ? 'wrap' : 'nowrap' }">
             <app-movie-preview *ngFor="let mov of movies"
             [ngClass]="{ 'isHidden': ((mov.id)<activMin) }"
             [movie]="mov"
             ></app-movie-preview>
-            <!-- [ngStyle]="{ 'display': ((mov.id>activMin) ) ? 'block' : 'none' }" -->
-            
-            <!-- activMin
-
-            if(this.activSlide>4) {
-                console.log('tst', ((this.movie.id+4)<(this.activSlide)) );
-                this.isHidden = ((this.movie.id+4)<(this.activSlide));
-              } -->
-
-            <!-- [currentSlide]="activSlide"
-            (highlighted)="onPushNewNum($event)" -->
-
         </div>
-
-        <!-- <div class="movieList"></div> -->
-
     </div>
   </div>
