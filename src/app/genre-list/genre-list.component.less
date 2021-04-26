@@ -36,7 +36,11 @@
 .movWrap {
     display: flex;
     overflow-y:hidden;
+    flex-wrap: wrap;
 
+    &.slimView {
+        flex-wrap: nowrap;
+    }
 
     @media screen and (max-width:600px) {
         display: block;
