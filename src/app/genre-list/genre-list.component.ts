@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges} from '@angular/core';
 import { ViewChild, ElementRef, HostListener } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
-import { DataService } from '../data.service';
+// import { DataService } from '../data.service';
 import { MovieModel } from '../movie.model';
 import { CurrentSlideService } from '../current-slide.service';
 import {Observable} from "rxjs";// First you need to import Observable
@@ -17,7 +17,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 export class GenreListComponent implements OnInit, OnChanges {
 
   // try to Focus view btn on load // for Arrow Nav / will reVisit later
-  @ViewChild("focusEl", { static: true }) viewAllBtn: ElementRef;
+  // @ViewChild("focusEl", { static: true }) viewAllBtn: ElementRef;
   @ViewChild('movieWrap', { static: true }) myWrappr: ElementRef;
 
   activSlide: number;
@@ -58,13 +58,15 @@ export class GenreListComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    // this.movLength = this.movies.length;
     // this.movieList = this.apiData.getMovieList();
     // this.movieList = this.apiData.getProducts();
     this.getYears();
 
     // this.movieList = this.getMovies();
     this.getMovies();
+    
+    // this.movLength = this.movies.length; // undefined
+
     console.log('mRetrieved, ', this.moviesRetrieved);
     console.log('movies, ', this.movies);
     this.slideService.getActivSlide().subscribe(activNum => {
