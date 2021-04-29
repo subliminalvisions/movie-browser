@@ -109,19 +109,15 @@ export class GenreListComponent implements OnInit, OnChanges {
           console.log('GetMovs_data', data);
           if (this.pageNumber === 1) {
             this.movies = data['results'];
-
           } else {
-            // this.movies = this.movies.concat(data['results']);
-            // concatenate arrays
+
             this.movies = [...this.movies, ...data['results']];
           }
-
           this.moviesRetrieved = this.movies.length;
           this.moviesTotal = data['total_results'];
           this.searchStatus = false;
         }
       );
-
   }
 
   ngOnChanges(): void {}
@@ -132,8 +128,7 @@ export class GenreListComponent implements OnInit, OnChanges {
     // Update var FROM Service to verify selected Movie
     this.activSlide = this.slideService.getActivSlideNum();
 
-    // update horizontal 4 column item visibility 
-    // for arrow right navigation 
+    // update horizontal 4-col for arrow Nav 
     if(this.activSlide>4) {
       this.activMin = this.activSlide-3;
     } else { this.activMin=-3; }

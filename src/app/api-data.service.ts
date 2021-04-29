@@ -8,8 +8,6 @@ import { APIconfig} from './api-keys';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
-// import { Response } from '@angular/http';
-import { EMPTY, empty, of } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +21,6 @@ export class ApiDataService {
   constructor(
     private http: HttpClient,
     httpErrorHandler: HttpErrorHandler,
-    // private APIconfig
     ) {
     this.handleError = httpErrorHandler.createHandleError('MovieService');
   }
@@ -55,7 +52,6 @@ export class ApiDataService {
     //     this.filterByGenres = '';
     // }
 
-
     // filter by keyword
     // A comma separated list of keyword ID's. Only include movies that have one of the ID's added as a keyword.
     /*
@@ -68,12 +64,10 @@ export class ApiDataService {
     // page
     const page = '&page=' + filters.page;
     const url = urlBase + filter + page;
-
     return this.http.get(url)
       .pipe(
           catchError(this.handleError('GetMovies', []))
       );
-
   }
 
   private extractData(res: Response): any {
@@ -90,59 +84,13 @@ export class ApiDataService {
       catchError(this.handleError)
     );
   }  
-  getData() {
-    const data = null;
-
-    const xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-    
-    xhr.addEventListener("readystatechange", function () {
-      if (this.readyState === this.DONE) {
-        console.log(this.responseText);
-      }
-    });
-    
-    xhr.open("GET", "https://imdb-api1.p.rapidapi.com/Title/k_12345678/tt1375666");
-    xhr.setRequestHeader("x-rapidapi-key", "9a015dfb5emsh5082da6b6cc6fdep12176cjsn13c9caf66159");
-    xhr.setRequestHeader("x-rapidapi-host", "imdb-api1.p.rapidapi.com");
-    
-    xhr.send(data);
-    
-  }
-  // getMovies() : Observable<any>{
-  //   let urlBase = "https://imdb23.p.rapidapi.comhttps//filmets.info/test";
-  //   return this.http.get(urlBase)
-  //       .map((response: Response) => response.json())
-  //       .catch(this.handleError);
-  // }
 
   getMovieList() {    
-    // return this.http
-    //     .put(url, JSON.stringify(student), options);
     let urlBase = "https://imdb23.p.rapidapi.comhttps//filmets.info/test";
-    // const url = urlBase + filter + page;
     const url = urlBase;
-
-    // console.log('getMov,key, ', this.APIconfig);
     console.log('getMov,url, ', url);
-    // console.log('getMov,url, ', httpOptions);
-    // 'https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=' 
-    // + this.apiKeyV3;
     return this.http.get(url, httpOptions)
-      // .pipe(
-      //     catchError(this.handleError('GetMovieList', []))
-      // );
+
   }
-  // private handleError(error: HttpErrorResponse): any {
-  //   if (error.error instanceof ErrorEvent) {
-  //     console.error('An error occurred:', error.error.message);
-  //   } else {
-  //     console.error(
-  //       `Backend returned code ${error.status}, ` +
-  //       `body was: ${error.error}`);
-  //   }
-  //   return throwError(
-  //     'Something bad happened; please try again later.');
-  // }
 
 }
